@@ -12,30 +12,6 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 1.25rem; /* left-5 */
-            top: 1.25rem; /* top-5 */
-            bottom: -1.25rem; /* -bottom-5 */
-            width: 2px;
-            background-color: #fbbf24; /* amber-400 */
-            transform: translateX(-50%);
-        }
-        .timeline-item:last-child::before {
-            display: none;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: 1.25rem; /* left-5 */
-            top: 0.75rem; /* top-3 */
-            width: 1rem;
-            height: 1rem;
-            border-radius: 9999px;
-            background-color: #f59e0b; /* amber-500 */
-            transform: translateX(-50%);
-            border: 2px solid white;
-        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -56,7 +32,7 @@
                 <li><a href="#day1" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">1日目</a></li>
                 <li><a href="#day2" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">2日目</a></li>
                 <li><a href="#day3" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">3日目</a></li>
-                <li><a href="#tokusan" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">特産品</a></li>
+                <li><a href="#recommendations" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">おすすめ</a></li>
             </ul>
         </div>
     </nav>
@@ -66,46 +42,50 @@
 
         <!-- 1日目 -->
         <section id="day1" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">1日目：神戸の下町グルメとハシゴ酒</h2>
-            <div class="relative pl-10">
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">13:00</p>
-                    <h3 class="text-xl font-bold mt-1">神戸到着・ホテルへ</h3>
-                    <p class="mt-2 text-gray-600">三宮・元町エリアのホテルに荷物を預けて、いざ出発！</p>
-                </div>
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">14:00</p>
-                    <h3 class="text-xl font-bold mt-1">味噌だれ餃子で乾杯！</h3>
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">1日目：神戸の絶景と下町グルメ</h2>
+            <div class="space-y-8">
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">13:20</p>
                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <img src="https://placehold.co/600x400/FBBF24/333333?text=味噌だれ餃子" alt="味噌だれ餃子のイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FBBF24/333333?text=Image+Not+Found';">
-                        <p class="text-gray-700">まずは神戸B級グルメの代表格「味噌だれ餃子」で景気付け！元町にある<strong class="text-amber-700">「元祖ぎょうざ苑」</strong>などで、ビール片手にご賞味あれ。</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=元祖ぎょうざ苑" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                        <h3 class="text-xl font-bold">神戸空港 到着</h3>
+                        <p class="mt-2 text-gray-600">✈️ 神戸空港 → 三宮駅 (ポートライナー / 約18分 / 340円)</p>
+                        <p class="mt-1 text-gray-600">🚃 三宮駅 → 神戸駅 (JR神戸線 / 約3分 / 140円)</p>
                     </div>
                 </div>
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">16:00</p>
-                    <h3 class="text-xl font-bold mt-1">鉄人28号とご対面＆ぼっかけコロッケ</h3>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">14:30</p>
                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                         <img src="https://placehold.co/600x400/38BDF8/FFFFFF?text=鉄人28号" alt="鉄人28号モニュメントのイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/38BDF8/FFFFFF?text=Image+Not+Found';">
-                        <p class="text-gray-700">新長田のシンボル<strong class="text-amber-700">「鉄人28号モニュメント」</strong>は圧巻の大きさ！近くの精肉店で神戸のソウルフード、牛すじ煮込み<strong class="text-amber-700">「ぼっかけ」</strong>が入ったアツアツのコロッケを頬張りましょう。</p>
-                         <a href="https://www.google.com/maps/search/?api=1&query=新長田+鉄人28号" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                        <h3 class="text-xl font-bold">ホテルにチェックイン</h3>
+                        <p class="font-semibold mt-2">🏨 宿泊先：SK HOTEL 神戸駅前</p>
+                        <p class="text-gray-700 mt-1">荷物を置いて、身軽になって観光へ出発！</p>
+                        <a href="https://maps.google.com/?q=SK+HOTEL+神戸駅前" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
                     </div>
                 </div>
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">15:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">神戸布引ハーブ園で絶景を堪能</h3>
+                        <img src="https://placehold.co/600x400/34D399/FFFFFF?text=神戸布引ハーブ園" alt="神戸布引ハーブ園のイメージ" class="w-full h-48 object-cover rounded-md my-4">
+                        <p class="text-gray-700">ロープウェイで神戸の街と港を一望できる絶景スポットへ。美しいハーブ園を散策してリフレッシュ。※ロープウェイ上り最終16:45</p>
+                        <p class="text-sm text-gray-600 mt-2">🚃 神戸駅 → 新神戸駅 (JRと地下鉄 / 約10分 / 350円)</p>
+                        <a href="https://maps.google.com/?q=神戸布引ハーブ園" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                    </div>
+                </div>
+                <div>
                     <p class="text-sm font-semibold text-gray-500">18:30〜</p>
-                    <h3 class="text-xl font-bold mt-1">三宮高架下でディープなハシゴ酒</h3>
-                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <img src="https://placehold.co/600x400/A78BFA/FFFFFF?text=三宮高架下" alt="三宮高架下のイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A78BFA/FFFFFF?text=Image+Not+Found';">
-                        <p class="text-gray-700">いよいよ夜の部！三宮の高架下商店街<strong class="text-amber-700">「ピアザ神戸」</strong>周辺へ。立ち飲み屋や大衆居酒屋が軒を連ねるディープなエリアです。新鮮な魚介やそばめしを肴に、気の向くままにハシゴ酒を楽しみましょう！</p>
-                         <a href="https://www.google.com/maps/search/?api=1&query=三宮+高架下+居酒屋" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">三宮でB級グルメとハシゴ酒</h3>
+                        <img src="https://placehold.co/600x400/FBBF24/333333?text=味噌だれ餃子" alt="三宮高架下のイメージ" class="w-full h-48 object-cover rounded-md my-4">
+                        <p class="text-gray-700">神戸B級グルメの聖地、三宮へ！味噌だれ餃子やそばめしを肴に、高架下などのディープな居酒屋を巡りましょう。</p>
+                        <div class="mt-6 border-t pt-4">
+                            <h4 class="font-bold text-amber-700">【おすすめ居酒屋】</h4>
+                            <ul class="mt-2 space-y-3 text-gray-700 text-sm">
+                                <li><strong>ぎょうざの店 ひょうたん (三宮店):</strong> 味噌だれ餃子の超有名店。まずはここで一杯！</li>
+                                <li><strong>金盃 本店:</strong> 渋い雰囲気が魅力の老舗大衆酒場。おでんや新鮮な魚介が美味しい。</li>
+                                <li><strong>スタンド GONTa:</strong> 活気のある人気の立ち飲み屋。サクッと飲むのに最適。</li>
+                            </ul>
+                        </div>
+                         <a href="https://maps.google.com/?q=三宮+高架下+居酒屋" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで探す</a>
                     </div>
                 </div>
             </div>
@@ -113,45 +93,49 @@
 
         <!-- 2日目 -->
         <section id="day2" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">2日目：神戸ワインと港町の洋食文化</h2>
-            <div class="relative pl-10">
-                 <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">10:30</p>
-                    <h3 class="text-xl font-bold mt-1">神戸ワイナリーでテイスティング</h3>
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">2日目：神戸ワインと港町文化</h2>
+            <div class="space-y-8">
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">10:00</p>
                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=神戸ワイナリー" alt="神戸ワイナリーのイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/60A5FA/FFFFFF?text=Image+Not+Found';">
-                        <p class="text-gray-700">少し足を延ばして<strong class="text-amber-700">「神戸ワイナリー」</strong>へ。神戸産のブドウで作られたワインを試飲できるワインセラーは必見です。広大な自然の中で、お気に入りの一本を見つけてみては？</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=神戸ワイナリー" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                        <h3 class="text-xl font-bold">神戸ワイナリーでテイスティング</h3>
+                        <img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=神戸ワイナリー" alt="神戸ワイナリーのイメージ" class="w-full h-48 object-cover rounded-md my-4">
+                        <p class="text-gray-700">神戸産ワインを試飲できる「神戸ワイナリー」へ。お土産にも最適です。</p>
+                        <p class="text-sm text-gray-600 mt-2">🚃 神戸駅 → 西神中央駅 (JRと地下鉄 / 約35分 / 560円)</p>
+                        <a href="https://maps.google.com/?q=神戸ワイナリー" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
                     </div>
                 </div>
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">13:30</p>
-                    <h3 class="text-xl font-bold mt-1">絶品！老舗のビフカツランチ</h3>
-                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <img src="https://placehold.co/600x400/F472B6/FFFFFF?text=ビフカツ" alt="ビフカツのイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/F472B6/FFFFFF?text=Image+Not+Found';">
-                        <p class="text-gray-700">ランチは神戸が誇る洋食文化の華、<strong class="text-amber-700">ビフカツ</strong>に舌鼓。<strong class="text-amber-700">「洋食の朝日」</strong>などの名店で、デミグラスソースとサクサク衣のハーモニーを堪能してください。</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=神戸+洋食の朝日" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">14:00</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">老舗のビフカツランチ</h3>
+                        <img src="https://placehold.co/600x400/F472B6/FFFFFF?text=ビフカツ" alt="ビフカツのイメージ" class="w-full h-48 object-cover rounded-md my-4">
+                        <p class="text-gray-700">ランチは神戸が誇る洋食文化の華、ビフカツに舌鼓。名店でデミグラスソースとサクサク衣のハーモニーを堪能。</p>
+                        <p class="text-sm text-gray-600 mt-2">🚃 西神中央駅 → 三宮駅 (地下鉄 / 約30分 / 410円)</p>
+                        <a href="https://maps.google.com/?q=神戸+ビフカツ+有名店" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで探す</a>
                     </div>
                 </div>
-                 <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">15:00</p>
-                    <h3 class="text-xl font-bold mt-1">元町・南京町をぶらり散策</h3>
-                    <p class="mt-2 text-gray-600">食後は元町商店街でお土産を探したり、南京町で豚まんを食べ比べしたり。神戸らしい活気を感じられます。</p>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">15:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">元町・南京町をぶらり散策</h3>
+                        <p class="mt-2 text-gray-600">食後は元町商店街でお土産を探したり、南京町で豚まんを食べ比べたり。神戸らしい活気を感じられます。</p>
+                    </div>
                 </div>
-                 <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
+                <div>
                     <p class="text-sm font-semibold text-gray-500">19:00</p>
-                    <h3 class="text-xl font-bold mt-1">地元の魚が旨い居酒屋で夕食</h3>
                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <p class="text-gray-700">夜は三宮に戻り、地元の人で賑わう海鮮居酒屋へ。瀬戸内で獲れた新鮮な魚介の刺身や天ぷらは、日本酒との相性も抜群です。</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=三宮+海鮮居酒屋" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで探す</a>
+                        <h3 class="text-xl font-bold">神戸駅・ハーバーランドで夜景ディナー</h3>
+                        <p class="mt-2 text-gray-700">ホテル近くの神戸駅周辺や、美しい夜景が楽しめるハーバーランドで夕食。瀬戸内の新鮮な魚介が楽しめる居酒屋がおすすめです。</p>
+                        <div class="mt-6 border-t pt-4">
+                            <h4 class="font-bold text-amber-700">【おすすめ居酒屋】</h4>
+                            <ul class="mt-2 space-y-3 text-gray-700 text-sm">
+                                <li><strong>うまいもん処 歴々:</strong> 神戸駅近くの人気店。新鮮な魚介を使った料理と豊富な地酒が楽しめる。</li>
+                                <li><strong>魚彩酒肴 湊:</strong> こちらも神戸駅近く。落ち着いた雰囲気で旬の魚を味わえる。</li>
+                                <li><strong>神戸 みなと物語:</strong> ハーバーランドumie内。夜景を見ながら食事できるカジュアルなダイニング。</li>
+                            </ul>
+                        </div>
+                        <a href="https://maps.google.com/?q=神戸ハーバーランド+居酒屋" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで探す</a>
                     </div>
                 </div>
             </div>
@@ -159,77 +143,111 @@
 
         <!-- 3日目 -->
         <section id="day3" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">3日目：灘の酒蔵と市場の活気</h2>
-             <div class="relative pl-10">
-                 <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">10:00</p>
-                    <h3 class="text-xl font-bold mt-1">日本一の酒処「灘五郷」巡り</h3>
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">3日目：神戸の歴史と市場散策 (ノンアルコール)</h2>
+             <div class="space-y-8">
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">09:30</p>
                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <img src="https://placehold.co/600x400/34D399/FFFFFF?text=灘五郷" alt="灘の酒蔵のイメージ" class="w-full h-48 object-cover rounded-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/34D399/FFFFFF?text=Image+Not+Found';">
-                        <p class="text-gray-700">最終日は日本酒の聖地、<strong class="text-amber-700">灘五郷</strong>へ。無料で試飲ができる<strong class="text-amber-700">「白鶴酒造資料館」</strong>や<strong class="text-amber-700">「菊正宗酒造記念館」</strong>を巡り、歴史ある酒造りの世界に触れます。ここでしか手に入らない限定酒はお土産に最適！</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=灘五郷+酒蔵" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                        <h3 class="text-xl font-bold">ホテルをチェックアウト</h3>
+                        <p class="mt-2 text-gray-600">荷物をホテルに預けて、最終日を楽しみましょう。</p>
                     </div>
                 </div>
-                <!-- タイムラインアイテム -->
-                <div class="timeline-item relative pb-10">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">13:00</p>
-                    <h3 class="text-xl font-bold mt-1">「神戸の台所」で最後の食べ歩き</h3>
-                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <p class="text-gray-700">旅の締めくくりは、新開地にある<strong class="text-amber-700">「東山商店街（神戸新鮮市場）」</strong>へ。地元の人々の活気あふれる市場で、串カツなどを食べ歩き。最後まで神戸の食を遊び尽くしましょう！</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=東山商店街+神戸" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">10:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">生田神社を参拝</h3>
+                        <img src="https://placehold.co/600x400/F87171/FFFFFF?text=生田神社" alt="生田神社のイメージ" class="w-full h-48 object-cover rounded-md my-4">
+                        <p class="text-gray-700">旅の最後に、神戸の歴史を見守ってきた「ご縁結びのいくたさん」を参拝。</p>
+                        <p class="text-sm text-gray-600 mt-2">🚃 神戸駅 → 三宮駅 (JR神戸線 / 約3分 / 140円)、駅から徒歩10分</p>
+                        <a href="https://maps.google.com/?q=生田神社" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
                     </div>
                 </div>
-                 <!-- タイムラインアイテム -->
-                <div class="timeline-item relative">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-semibold text-gray-500">15:00</p>
-                    <h3 class="text-xl font-bold mt-1">神戸駅・新神戸駅へ</h3>
-                    <p class="mt-2 text-gray-600">楽しかった旅も終わり。お土産を手に、帰路へ。</p>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">12:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">「神戸の台所」で最後の食べ歩き</h3>
+                        <p class="text-gray-700">旅の締めくくりは、新開地にある「東山商店街」へ。活気あふれる市場で、串カツなどを食べ歩き！</p>
+                         <p class="text-sm text-gray-600 mt-2">🚃 三宮駅 → 新開地駅 (阪神・阪急 / 約5分 / 150円)</p>
+                        <a href="https://maps.google.com/?q=東山商店街+神戸" target="_blank" class="inline-block mt-3 text-sm text-blue-600 hover:underline">Googleマップで見る</a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">14:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">ホテルで荷物を受け取り空港へ</h3>
+                        <p class="mt-2 text-gray-600">🚃 新開地駅 → 神戸駅 (阪神・阪急 / 約2分 / 130円)</p>
+                        <p class="mt-1 text-gray-600">🏨 ホテルで荷物ピックアップ</p>
+                        <p class="mt-1 text-gray-600">🚃 神戸駅 → 三宮駅 (JR神戸線 / 約3分 / 140円)</p>
+                        <p class="mt-1 text-gray-600">✈️ 三宮駅 → 神戸空港駅 (ポートライナー / 約18分 / 340円)</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-gray-500">17:30</p>
+                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold">神戸空港 出発</h3>
+                        <p class="mt-2 text-gray-600">楽しかった旅も終わり。お土産を手に、那覇へ。(19:50着)</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 神戸の特産品 -->
-        <section id="tokusan" class="mb-16 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-center">お土産に！神戸の特産品</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">神戸牛</h3>
-                    <p class="text-sm mt-1 text-gray-600">最高級和牛。ステーキはもちろん、しぐれ煮やコロッケも人気。</p>
+        <!-- フライト情報 -->
+        <section id="flight-info" class="mb-16 bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">フライト・宿泊情報</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold text-amber-700 text-lg">✈️ 往路</h3>
+                    <p class="mt-2 text-gray-600"><strong>日時:</strong> 11月29日(土) 11:30発 → 13:20着</p>
+                    <p class="text-gray-600"><strong>区間:</strong> 那覇空港 (OKA) → 神戸空港 (UKB)</p>
                 </div>
-                 <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">いかなごのくぎ煮</h3>
-                    <p class="text-sm mt-1 text-gray-600">甘辛い味付けがご飯にぴったり。春の風物詩。</p>
+                <div>
+                    <h3 class="font-bold text-amber-700 text-lg">✈️ 復路</h3>
+                    <p class="mt-2 text-gray-600"><strong>日時:</strong> 12月1日(月) 17:30発 → 19:50着</p>
+                    <p class="text-gray-600"><strong>区間:</strong> 神戸空港 (UKB) → 那覇空港 (OKA)</p>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">洋菓子・パン</h3>
-                    <p class="text-sm mt-1 text-gray-600">神戸プリンや有名ベーカリーのパンは外せません。</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">灘の酒</h3>
-                    <p class="text-sm mt-1 text-gray-600">日本一の酒どころの銘酒。酒蔵限定品も要チェック。</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">神戸ワイン</h3>
-                    <p class="text-sm mt-1 text-gray-600">神戸の気候で育ったブドウで作られた、地元ならではのワイン。</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md">
-                    <h3 class="font-bold text-amber-700">ぼっかけ</h3>
-                    <p class="text-sm mt-1 text-gray-600">牛すじとこんにゃくの煮込み。お土産用のパックもあります。</p>
+                <div class="md:col-span-2">
+                     <h3 class="font-bold text-amber-700 text-lg">🏨 宿泊先</h3>
+                    <p class="mt-2 text-gray-600"><strong>ホテル名:</strong> SK HOTEL 神戸駅前</p>
                 </div>
             </div>
         </section>
+
+        <!-- おすすめ -->
+        <section id="recommendations" class="mb-16 bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">おすすめのお土産＆B級グルメ</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-bold text-amber-700 text-lg mb-3">🎁 お土産</h3>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li><strong>神戸プリン:</strong> とろける食感と濃厚な味わいで定番の人気。</li>
+                        <li><strong>観音屋のチーズケーキ:</strong> 温めて食べる、甘くてしょっぱい新感覚のデンマークチーズケーキ。</li>
+                        <li><strong>いかなごのくぎ煮:</strong> 甘辛い味付けがご飯にぴったりの神戸の郷土料理。</li>
+                        <li><strong>フロインドリーブのクッキー:</strong> 教会を改装したカフェでも有名な老舗のドイツパン・洋菓子店の逸品。</li>
+                        <li><strong>灘の酒:</strong> 日本一の酒どころのお酒。酒蔵限定品も多い。</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-amber-700 text-lg mb-3">🍴 必食B級グルメ</h3>
+                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                        <li><strong>味噌だれ餃子:</strong> 神戸発祥。味噌ベースのタレで食べる餃子は格別。</li>
+                        <li><strong>ぼっかけ:</strong> 牛すじとこんにゃくの甘辛い煮込み。うどんやそばめしにも。</li>
+                        <li><strong>そばめし:</strong> ご飯と細かく刻んだ中華麺を一緒に炒める長田区発祥のソウルフード。</li>
+                        <li><strong>ビフカツ:</strong> 神戸の洋食文化を代表する一品。デミグラスソースが決め手。</li>
+                        <li><strong>明石焼き:</strong> ふわふわの生地を上品な出汁につけて食べる。神戸でも多くの店で味わえる。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- フッター -->
     <footer class="bg-gray-800 text-white text-center py-6">
         <div class="container mx-auto px-6">
-            <p>&copy; 2025 神戸B級グルメ探訪プラン. All Rights Reserved.</p>
+            <p>© 2025 神戸B級グルメ探訪プラン. All Rights Reserved.</p>
         </div>
     </footer>
 
 </body>
 </html>
+
