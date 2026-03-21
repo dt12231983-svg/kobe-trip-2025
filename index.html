@@ -3,309 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神戸・奈良 絶景＆紅葉の旅 | 2025/11/29 - 12/1</title>
+    <title>2026年度 新人事評価制度 評価者研修</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
         body {
             font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        .slide-card {
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .accent-border {
+            border-left: 6px solid #f97316;
+        }
+        .script-card {
+            background: #fffaf0;
+            border: 1px solid #feebc8;
+            transition: all 0.2s ease;
+        }
+        .script-card:hover {
+            border-color: #f97316;
+            transform: translateY(-2px);
         }
     </style>
+    <!-- 
+      Selected Palette: Vibrant Blue (#2563eb) & Energetic Orange (#f97316)
+      Narrative: Intro (New System Purpose) -> Biases (Halo effect) -> Case Studies -> Kishu-Mendan Scripts -> Mid-term Feedback
+      Visuals: Bar (Dissatisfaction), Radar (Bias Intensity), Doughnut (Listening Ratio)
+      Confirmed: NO SVG, NO MERMAID used.
+    -->
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="p-0 m-0">
 
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">神戸・奈良 絶景＆紅葉の旅</h1>
-            <p class="mt-4 text-lg text-gray-600">職場の仲間と巡る、最高の旅行プラン</p>
-            <p class="mt-2 font-semibold text-amber-600">2025年11月29日（土）～ 12月1日（月）</p>
+    <!-- Navigation Header -->
+    <nav class="vibrant-gradient text-white sticky top-0 z-50 px-6 py-4 shadow-lg flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="font-black text-xl tracking-tighter italic">EVGM</span>
+            <span class="h-6 w-px bg-blue-300 mx-2"></span>
+            <h1 class="font-bold text-lg md:text-xl">管理者向け 評価者研修 2026</h1>
         </div>
-    </header>
-
-    <nav class="sticky top-0 bg-white/80 backdrop-blur-md shadow-sm z-10">
-        <div class="container mx-auto px-6">
-            <ul class="flex justify-center space-x-4 md:space-x-8 py-3">
-                <li><a href="#day1" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">1日目</a></li>
-                <li><a href="#day2" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">2日目</a></li>
-                <li><a href="#day3" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">3日目</a></li>
-                <li><a href="#recommendations" class="text-gray-600 hover:text-amber-600 font-semibold transition-colors duration-300">おすすめ</a></li>
-            </ul>
+        <div class="hidden md:block text-sm font-medium opacity-90">
+            CHRO 渡辺
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-16">
 
-        <!-- 1日目 -->
-        <section id="day1" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">1日目：神戸の絶景と夜景を満喫</h2>
-            <div class="space-y-8">
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">11:30</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">那覇空港 出発</h3>
-                        <p class="mt-2 text-gray-700">いざ神戸へ！空の旅を楽しみましょう。</p>
+        <!-- Slide 1: Introduction -->
+        <section class="text-center space-y-6">
+            <h2 class="text-4xl md:text-6xl font-black text-blue-900 leading-tight">
+                「評価」を<br class="md:hidden">人材育成の武器に変える
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+                2026年4月、評価制度は「管理」から「才能の引き出し（Educare）」へ進化します。<br>
+                課長代理の皆さんに託される、一次評価のバトン。その重要性を学びましょう。
+            </p>
+            <div class="flex justify-center gap-4">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 font-bold rounded-full text-sm">#通年評価への移行</span>
+                <span class="px-4 py-2 bg-orange-100 text-orange-700 font-bold rounded-full text-sm">#課長代理権限委譲</span>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Slide 2: Why do employees feel dissatisfied? -->
+            <div class="slide-card p-8 space-y-6">
+                <h3 class="text-2xl font-bold text-blue-800 flex items-center gap-2">
+                    <span class="w-2 h-8 bg-blue-600 rounded"></span>
+                    評価制度への「不満」の正体
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    従業員の不満の多くは「点数」そのものではなく、<strong>「プロセスの不透明さ」</strong>にあります。評価基準が曖昧なまま期末を迎えることが、組織の毒となります。
+                </p>
+                <div class="chart-container">
+                    <canvas id="chartDissatisfaction"></canvas>
+                </div>
+            </div>
+
+            <!-- Slide 3: Psychological Biases -->
+            <div class="slide-card p-8 space-y-6">
+                <h3 class="text-2xl font-bold text-orange-600 flex items-center gap-2">
+                    <span class="w-2 h-8 bg-orange-500 rounded"></span>
+                    評価を歪める「心のフィルター」
+                </h3>
+                <p class="text-gray-600 leading-relaxed">
+                    私たちは「見たいようにしか見ない」生き物です。特に現場の忙しさに追われると、以下のバイアスが強く働きます。
+                </p>
+                <div class="chart-container">
+                    <canvas id="chartBias"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Practical Case Studies (Rent-a-car Context) -->
+        <section class="slide-card p-8 md:p-12 space-y-8">
+            <div class="text-center space-y-2">
+                <h3 class="text-3xl font-bold text-blue-900 italic">Case Study</h3>
+                <p class="text-gray-500">レンタカー営業所の「現場」で起きる評価エラー</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="accent-border pl-6 space-y-4">
+                    <h4 class="text-xl font-bold text-blue-800">ケースA：ハロー効果の罠</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2">
+                        <p class="font-bold">【状況】</p>
+                        <p>接客が抜群に明るく、指名アンケートも1位のAさん。</p>
+                        <p class="font-bold text-red-600">【エラー】</p>
+                        <p>「接客が良いから他も完璧だろう」と思い込み、車両点検の記録漏れや事務ミスを「些細なこと」として高評価を継続してしまった。</p>
+                        <p class="font-bold text-blue-700">【結果】</p>
+                        <p>後に重大な車両不備が発生。真面目に点検をしていたBさんのやる気が壊滅。</p>
                     </div>
                 </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">13:20 - 14:30</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸空港到着、ホテルへ</h3>
-                        <p class="mt-2 text-gray-700">空港からホテルへ移動し、チェックインします。（交通費：計480円）</p>
-                        <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> ポートライナー</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">神戸空港駅</span> → <span class="font-semibold">三宮駅</span></p>
-                            </div>
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> JR神戸線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">三宮駅</span> → <span class="font-semibold">神戸駅</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">15:00 - 17:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸布引ハーブ園</h3>
-                        <img src="https://placehold.co/600x400/34D399/FFFFFF?text=神戸布引ハーブ園+紅葉" alt="神戸布引ハーブ園のイメージ" class="w-full h-48 object-cover rounded-md my-4">
-                        <p class="text-gray-700">ロープウェイで神戸の街と紅葉のパノラマを楽しみながら山上へ。美しいハーブ園を散策。</p>
-                        <p class="mt-2 text-sm text-gray-600"><strong>料金:</strong> 1,800円 (ロープウェイ往復＋入園料)</p>
-                        <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> JR神戸線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">神戸駅</span> → <span class="font-semibold">三宮駅</span></p>
-                            </div>
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚇 <strong>路線:</strong> 神戸市営地下鉄 西神・山手線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">三宮駅</span> → <span class="font-semibold">新神戸駅</span> (ロープウェイのりば直結)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">17:30 - 20:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">摩耶山 掬星台で夜景鑑賞</h3>
-                        <img src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=摩耶山+1000万ドルの夜景" alt="摩耶山の夜景のイメージ" class="w-full h-48 object-cover rounded-md my-4">
-                        <p class="text-gray-700">日本三大夜景の一つ「1000万ドルの夜景」を堪能。息をのむ美しさです。</p>
-                        <p class="mt-2 text-sm text-gray-600"><strong>料金:</strong> 1,560円 (まやビューライン往復)</p>
-                         <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚇 <strong>路線:</strong> 神戸市営地下鉄 西神・山手線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">新神戸駅</span> → <span class="font-semibold">三宮駅</span></p>
-                            </div>
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚌 <strong>路線:</strong> 神戸市バス18系統 (約25分 / 210円)</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">三宮駅ターミナル</span> → <span class="font-semibold">摩耶ケーブル下</span></p>
-                            </div>
-                        </div>
-                        <div class="mt-4 bg-yellow-50 p-3 rounded-md text-sm text-yellow-800">
-                            <strong>【重要】</strong>まやビューラインは曜日や季節で運行時間が変わります。事前に公式サイトで運行状況を必ずご確認ください。
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">20:30〜</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸駅周辺で夕食</h3>
-                        <p class="text-gray-700">夜景の余韻に浸りながら、ホテル近くの居酒屋で乾杯！</p>
-                        <div class="mt-6 border-t pt-4">
-                            <h4 class="font-bold text-amber-700">【おすすめ居酒屋】</h4>
-                            <ul class="mt-2 space-y-3 text-gray-700 text-sm">
-                                <li><strong>うまいもん処 歴々:</strong> 神戸駅近くの人気店。新鮮な魚介を使った料理と豊富な地酒が楽しめる。</li>
-                                <li><strong>魚彩酒肴 湊:</strong> こちらも神戸駅近く。落ち着いた雰囲気で旬の魚を味わえる。</li>
-                                <li><strong>神戸 легенда (レジェンダ):</strong> 地元の食材を使った創作料理が楽しめるバル。</li>
-                            </ul>
-                        </div>
+
+                <div class="accent-border pl-6 space-y-4">
+                    <h4 class="text-xl font-bold text-orange-600">ケースB：中心化傾向の罪</h4>
+                    <div class="bg-gray-50 p-4 rounded-lg text-sm space-y-2">
+                        <p class="font-bold">【状況】</p>
+                        <p>初めて部下を評価する新任の課長代理Bさん。</p>
+                        <p class="font-bold text-red-600">【エラー】</p>
+                        <p>「嫌われたくない」「角を立てたくない」という心理から、未達の部下に対しても「今後に期待してB（標準）」をつけた。</p>
+                        <p class="font-bold text-blue-700">【結果】</p>
+                        <p>目標を達成した優秀層が「頑張っても頑張らなくても同じB評価か」と納得感を失い、離職予備軍へ。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2日目 -->
-        <section id="day2" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">2日目：古都・奈良で紅葉狩り</h2>
-            <div class="space-y-8">
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">10:00 - 11:20</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸から奈良へ移動</h3>
-                        <p class="text-gray-700">神戸三宮駅から近鉄奈良駅へ。乗り換えなしの快速急行が便利です。（交通費：1,060円）</p>
-                         <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> 阪神なんば線・近鉄奈良線 (直通)</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">神戸三宮駅</span> → <span class="font-semibold">近鉄奈良駅</span></p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Slide 5: Talk Scripts for Kishu-Mendan -->
+        <section class="space-y-8">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold text-blue-900">期首面談：信頼を築くトークスクリプト</h3>
+                <p class="text-gray-600 mt-2">部下と目標（KPI/コンピテンシー）を握り合う5つのパターン</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="script-card p-6 rounded-xl space-y-3">
+                    <span class="text-orange-500 font-black text-lg">01. 目的共有</span>
+                    <p class="text-sm font-bold text-gray-800">「この面談は、君に点数をつける場ではなく、君がこの1年でどう輝くかを一緒に決める『作戦会議』だ。」</p>
+                    <p class="text-xs text-gray-500">査定への恐怖を取り除き、前向きな姿勢を引き出す一言。</p>
                 </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">11:40 - 14:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">奈良公園散策と東大寺拝観</h3>
-                        <img src="https://placehold.co/600x400/F97316/FFFFFF?text=奈良公園+紅葉と鹿" alt="奈良公園のイメージ" class="w-full h-48 object-cover rounded-md my-4">
-                        <p class="text-gray-700">美しい紅葉の奈良公園で鹿とふれあい、世界遺産・東大寺の大仏を拝観します。(駅から徒歩約20分)</p>
-                        <p class="mt-2 text-sm text-gray-600"><strong>料金:</strong> 東大寺 600円</p>
-                    </div>
+                <div class="script-card p-6 rounded-xl space-y-3">
+                    <span class="text-orange-500 font-black text-lg">02. 数値の意味</span>
+                    <p class="text-sm font-bold text-gray-800">「予約件数目標は単なる数字じゃない。地域で一番選ばれるお店になるための大切な指標なんだ。」</p>
+                    <p class="text-xs text-gray-500">KPIを単なるノルマから、社会的意義やビジョンに変換する。</p>
                 </div>
-                 <div>
-                    <p class="text-sm font-semibold text-gray-500">14:00 - 15:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">ランチ休憩</h3>
-                        <p class="text-gray-700">東大寺周辺の参道や、ならまちエリアで奈良名物「柿の葉寿司」や「茶粥」などを楽しみます。</p>
-                    </div>
+                <div class="script-card p-6 rounded-xl space-y-3">
+                    <span class="text-orange-500 font-black text-lg">03. 行動指標</span>
+                    <p class="text-sm font-bold text-gray-800">「わが社の『誠実さ』は、次のお客様のために見えない汚れに気づいて清掃すること。これを目標にしよう。」</p>
+                    <p class="text-xs text-gray-500">曖昧なコンピテンシーを現場の具体的アクションに落とし込む。</p>
                 </div>
-                 <div>
-                    <p class="text-sm font-semibold text-gray-500">15:00 - 16:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">興福寺を拝観</h3>
-                        <p class="text-gray-700">五重塔と紅葉の美しい景色を楽しみます。(東大寺から徒歩約15分)</p>
-                        <p class="mt-2 text-sm text-gray-600"><strong>料金:</strong> 国宝館 700円</p>
-                    </div>
+                <div class="script-card p-6 rounded-xl md:col-start-1 space-y-3">
+                    <span class="text-orange-500 font-black text-lg">04. タイム管理</span>
+                    <p class="text-sm font-bold text-gray-800">「浮いた15分で、お客様と深い話をしたり新しいスキルを学ぼう。効率化は君の余裕を作るためにある。」</p>
+                    <p class="text-xs text-gray-500">生産性向上を「自分のメリット」として捉えさせるアプローチ。</p>
                 </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">16:30 - 18:00</p>
-                     <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸へ移動</h3>
-                        <p class="text-gray-700">近鉄奈良駅から神戸三宮駅へ戻ります。</p>
-                         <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> 近鉄奈良線・阪神なんば線 (直通)</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">近鉄奈良駅</span> → <span class="font-semibold">神戸三宮駅</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">19:00〜</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸駅周辺で夕食</h3>
-                        <p class="text-gray-700">奈良の思い出を語りながら、神戸の夜を楽しみましょう。</p>
-                    </div>
+                <div class="script-card p-6 rounded-xl space-y-3">
+                    <span class="text-orange-500 font-black text-lg">05. サポートの約束</span>
+                    <p class="text-sm font-bold text-gray-800">「君を成功させるのが私の責任だ。途中で壁にぶつかったら、いつでも相談してほしい。一緒に走ろう。」</p>
+                    <p class="text-xs text-gray-500">心理的安全性を担保し、上司を「見守り役」として再定義する。</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3日目 -->
-        <section id="day3" class="mb-16">
-            <h2 class="text-2xl font-bold mb-8 border-l-4 border-amber-500 pl-4">3日目：神戸の歴史とグルメを満喫</h2>
-             <div class="space-y-8">
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">10:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">ホテルをチェックアウト</h3>
-                        <p class="mt-2 text-gray-600">荷物をホテルに預けて、最終日の観光へ。</p>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">10:30 - 11:30</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">生田神社を参拝</h3>
-                        <img src="https://placehold.co/600x400/F87171/FFFFFF?text=生田神社" alt="生田神社のイメージ" class="w-full h-48 object-cover rounded-md my-4">
-                        <p class="text-gray-700">旅の最後に、神戸の歴史を見守ってきた「ご縁結びのいくたさん」を参拝。（駅から徒歩10分）</p>
-                        <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> JR神戸線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">神戸駅</span> → <span class="font-semibold">三宮駅</span> (約3分)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">12:00 - 14:00</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">市内観光＆食べ歩き</h3>
-                        <p class="text-gray-700">元町商店街や南京町を散策し、ビフカツランチや点心の食べ歩き、お土産探しを楽しみます。</p>
-                        <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> JR神戸線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">三宮駅</span> → <span class="font-semibold">元町駅</span> (約2分)</p>
-                                <p class="text-xs text-gray-500 mt-1">※三宮から元町は徒歩でも10分程度です。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div>
-                    <p class="text-sm font-semibold text-gray-500">14:00 - 15:30</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸空港へ</h3>
-                        <p class="mt-2 text-gray-600">ホテルで荷物を受け取り、神戸空港へ。15:30到着を目標に移動します。</p>
-                        <div class="mt-3 text-sm space-y-2">
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> JR神戸線</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">神戸駅</span> → <span class="font-semibold">三宮駅</span></p>
-                            </div>
-                            <div class="bg-gray-50 p-3 rounded-md">
-                                <p>🚃 <strong>路線:</strong> ポートライナー</p>
-                                <p><strong>区間:</strong> <span class="font-semibold">三宮駅</span> → <span class="font-semibold">神戸空港駅</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-gray-500">17:30 - 19:50</p>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-bold">神戸空港 出発 → 那覇空港 到着</h3>
-                        <p class="mt-2 text-gray-700">お疲れ様でした。気をつけてお帰りください。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- フライト情報 -->
-        <section id="flight-info" class="mb-16 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-center">フライト・宿泊情報</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-bold text-amber-700 text-lg">✈️ 往路</h3>
-                    <p class="mt-2 text-gray-600"><strong>日時:</strong> 11月29日(土) 11:30発 → 13:20着</p>
-                    <p class="text-gray-600"><strong>区間:</strong> 那覇空港 (OKA) → 神戸空港 (UKB)</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-amber-700 text-lg">✈️ 復路</h3>
-                    <p class="mt-2 text-gray-600"><strong>日時:</strong> 12月1日(月) 17:30発 → 19:50着</p>
-                    <p class="text-gray-600"><strong>区間:</strong> 神戸空港 (UKB) → 那覇空港 (OKA)</p>
-                </div>
-                <div class="md:col-span-2">
-                     <h3 class="font-bold text-amber-700 text-lg">🏨 宿泊先</h3>
-                    <p class="mt-2 text-gray-600"><strong>ホテル名:</strong> SK HOTEL 神戸駅前</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- おすすめ -->
-        <section id="recommendations" class="mb-16 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-center">おすすめのお土産＆B級グルメ</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-bold text-amber-700 text-lg mb-3">🎁 お土産</h3>
-                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
-                        <li><strong>神戸プリン:</strong> とろける食感と濃厚な味わいで定番の人気。</li>
-                        <li><strong>観音屋のチーズケーキ:</strong> 温めて食べる、甘くてしょっぱい新感覚のデンマークチーズケーキ。</li>
-                        <li><strong>いかなごのくぎ煮:</strong> 甘辛い味付けがご飯にぴったりの神戸の郷土料理。</li>
-                        <li><strong>フロインドリーブのクッキー:</strong> 教会を改装したカフェでも有名な老舗のドイツパン・洋菓子店の逸品。</li>
+        <!-- Slide 6: Mid-term Feedback & Listening Ratio -->
+        <section class="slide-card p-8 md:p-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-blue-900 italic">Mid-term Feedback</h3>
+                    <h4 class="text-xl font-bold text-orange-600">「お褒め・気づき」ミーティング</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        面談の成功は「準備」と「比率」で決まります。期末に突然悪い結果を伝えるのは厳禁。期中の軌道修正こそが管理職の最大の貢献です。
+                    </p>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">1</span>
+                            褒めることから始め、部下の心の扉を開く。
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">2</span>
+                            「なんで？」ではなく「どうして？」と問いかけ、プロセスを聞き出す。
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">3</span>
+                            上司が話す時間は3割。部下に7割語らせる。
+                        </li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="font-bold text-amber-700 text-lg mb-3">🍴 必食B級グルメ</h3>
-                    <ul class="space-y-2 text-gray-600 list-disc list-inside">
-                        <li><strong>味噌だれ餃子:</strong> 神戸発祥。味噌ベースのタレで食べる餃子は格別。</li>
-                        <li><strong>そばめし:</strong> ご飯と細かく刻んだ中華麺を一緒に炒める長田区発祥のソウルフード。</li>
-                        <li><strong>ビフカツ:</strong> 神戸の洋食文化を代表する一品。デミグラスソースが決め手。</li>
-                        <li><strong>南京町の点心:</strong> 豚まんや小籠包など、食べ歩きが楽しい。</li>
-                    </ul>
+                <div class="space-y-4">
+                    <div class="chart-container">
+                        <canvas id="chartListeningRatio"></canvas>
+                    </div>
+                    <p class="text-center text-xs font-bold text-gray-500">理想的なコミュニケーション・バランス</p>
                 </div>
             </div>
         </section>
+
+        <!-- Footer / Closing -->
+        <footer class="text-center py-12 space-y-6 border-t border-gray-200">
+            <h4 class="text-2xl font-bold text-blue-900">一人で抱え込まず、HR部門へ。</h4>
+            <p class="text-gray-600 max-w-2xl mx-auto italic">
+                「評価は、君自身のマネジメントスキルを磨くチャンスでもある。部下の可能性を信じるところから始めよう。」
+            </p>
+            <div class="bg-blue-50 p-6 rounded-lg inline-block text-left text-sm space-y-1">
+                <p><strong>相談窓口：</strong> 本社HR部門（内線：〇〇）</p>
+                <p><strong>ツール：</strong> あしたのチーム クラウド操作ガイドは共有フォルダ参照</p>
+            </div>
+        </footer>
+
     </main>
 
-    <footer class="bg-gray-800 text-white text-center py-6">
-        <div class="container mx-auto px-6">
-            <p>© 2025 神戸旅行プラン. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <script>
+        // Chart.js Default Font Settings
+        Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+        Chart.defaults.color = "#4a5568";
 
+        // Multiline Label Helper
+        const wrapLabel = (str, limit = 16) => {
+            const words = str.split('');
+            let lines = [];
+            let currentLine = "";
+            words.forEach(char => {
+                if (currentLine.length >= limit) {
+                    lines.push(currentLine);
+                    currentLine = "";
+                }
+                currentLine += char;
+            });
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        };
+
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems;
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join('') : label;
+                        }
+                    }
+                }
+            }
+        };
+
+        // Chart 1: Dissatisfaction Reasons
+        const ctxDissatisfaction = document.getElementById('chartDissatisfaction').getContext('2d');
+        new Chart(ctxDissatisfaction, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel("評価基準が曖昧で何を頑張ればいいか不明"),
+                    wrapLabel("フィードバックがなく結果だけ通知される"),
+                    wrapLabel("上司の好き嫌いで判断されていると感じる"),
+                    wrapLabel("目標が高すぎて達成意欲が湧かない")
+                ],
+                datasets: [{
+                    label: '不満を感じる割合 (%)',
+                    data:,
+                    backgroundColor: '#2563eb',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                ...tooltipConfig,
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // Chart 2: Bias Intensity
+        const ctxBias = document.getElementById('chartBias').getContext('2d');
+        new Chart(ctxBias, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'ハロー効果',
+                    '中心化傾向',
+                    '論理的誤差',
+                    '寛大化傾向',
+                    '厳格化傾向',
+                    '近接誤差'
+                ],
+                datasets: [{
+                    label: '陥りやすいリスク強度',
+                    data:,
+                    backgroundColor: 'rgba(249, 115, 22, 0.2)',
+                    borderColor: '#f97316',
+                    pointBackgroundColor: '#f97316'
+                }]
+            },
+            options: {
+                ...tooltipConfig,
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: { angleLines: { display: false }, suggestMin: 0, suggestMax: 100 }
+                }
+            }
+        });
+
+        // Chart 3: Listening Ratio
+        const ctxListening = document.getElementById('chartListeningRatio').getContext('2d');
+        new Chart(ctxListening, {
+            type: 'doughnut',
+            data: {
+                labels: ['部下の発言 (70%)', '管理職の発言 (30%)'],
+                datasets: [{
+                    data:,
+                    backgroundColor: ['#f97316', '#2563eb'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...tooltipConfig,
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    ...tooltipConfig.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
