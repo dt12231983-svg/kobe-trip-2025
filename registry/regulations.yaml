@@ -1,0 +1,332 @@
+# 現行規程台帳
+#
+# ⚠ これは「シード」です。2026-08-10 に SharePoint 検索で収集したファイル一覧に基づきますが、
+#    各規程の本文（附則・第1条）は未読で、検索スニペットからの推定を含みます。
+#    `/規程-台帳更新` で 08-registry を実行し、本文を読んだ上で検証してください。
+#    検証済みのエントリには last_verified_by: human / verified_at を付けてください。
+
+meta:
+  updated_at: "2026-08-10"
+  updated_by: seed          # 08-registry 実行後は 08-registry に変わる
+  verified: false           # 本文未読のため未検証
+  source_roots:
+    - "share@evgm.co.jp:/Documents/総務/【閲覧用】規程・就業規則/"
+    - "takizawa-d@evgm.co.jp:/Documents/ドキュメント/【閲覧用】規程・就業規則/"
+    - "takizawa-d@evgm.co.jp:/Documents/ドキュメント/人事制度/"
+  intranet: "https://travelluft.sharepoint.com/sites/evgm_group/SitePages/Work-Rules.aspx"
+
+regulations:
+
+  # ───────── 人事・労務系（就業規則を頂点とする体系）─────────
+
+  - id: shugyo-kisoku
+    name: 就業規則
+    layer: EVGM
+    status: 要確認
+    effective_date: null
+    note: |
+      正社員用と「無期社員、契約社員・パートナー社員就業規則」の2本立て。
+      SharePoint サイトページ (Work-Rules.aspx) に掲載されているが、
+      原本ファイルの所在と現行版が未特定。08-registry での確認が必要。
+    children: [chingin, jinji-hyoka, keicho-mimaikin, tenkin, harassment-evgm]
+    owner_dept: 管理部総務人事課
+    labor_standards_act: true    # 労基法上の就業規則そのもの
+
+  - id: chingin
+    name: 賃金規程
+    layer: EVGM
+    status: current
+    effective_date: "2026-04-01"
+    revision_note: "20260401改定"
+    parent: shugyo-kisoku
+    owner_dept: 管理部総務人事課
+    labor_standards_act: true
+    files:
+      - name: "賃金規程(20260401改定).pdf"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2026-03-30"
+        role: current
+      - name: "賃金規程(20260401改定).pdf"
+        root: HR_ROOT
+        last_modified: "2026-03-30"
+        role: duplicate
+    note: "「就業規則の定めに基づき」と第1条にあり、就業規則の下位規程。2フォルダに重複配置。"
+
+  - id: jinji-hyoka
+    name: 人事評価規定
+    layer: EVGM
+    status: current
+    effective_date: "2026-04-01"
+    parent: shugyo-kisoku
+    owner_dept: 管理部総務人事課
+    labor_standards_act: true
+    deliverable_folder: "REG_ROOT/20260401_人事評価規定/"
+    files:
+      - name: "01_人事評価規定概要資料.pdf"
+        role: 概要資料
+      - name: "02_人事評価制度スライド.pdf"
+        role: 説明スライド
+      - name: "03_新人事評価制度主な改正.pdf"
+        role: 周知資料
+    note: |
+      規程本体のファイルが成果物フォルダ内に見当たらない（概要・スライド・改正点のみ）。要確認。
+      制定時に就業規則・賃金規程の改定を伴った。成果物セットの構成見本として参照する。
+      表記が「規程」ではなく「規定」だが固有名詞として定着。
+
+  - id: keicho-mimaikin
+    name: 慶弔見舞金規程
+    layer: EVGM
+    status: current
+    effective_date: "2023-01-01"
+    parent: shugyo-kisoku
+    owner_dept: 管理部総務人事課
+    files:
+      - name: "慶弔見舞金規程（2023.1.1）.doc"
+        root: HR_ROOT
+        last_modified: "2024-11-08"
+    note: "適用範囲は「役員及び従業員（臨時従業員を除く。）」"
+
+  - id: tenkin
+    name: 転勤取扱規程
+    layer: EVGM
+    status: current
+    effective_date: "2026-04-01"
+    parent: shugyo-kisoku
+    owner_dept: 管理部総務人事課
+    files:
+      - name: "転勤取扱規程_20260401施行.pdf"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2026-04-08"
+    note: "適用範囲は正社員のみ（「居住地の変更を要する正社員」）"
+
+  - id: shiyusha-tsukin
+    name: 私有車通勤規程
+    layer: EVGM
+    status: current
+    effective_date: "2024-09-01"
+    owner_dept: 管理部総務人事課
+    files:
+      - name: "私有車通勤規程（2024.9.1）.docx"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2024-09-10"
+    note: "適用範囲は列挙型（正社員、短時間正社員、無期社員、契約社員、パートナー社員）"
+
+  - id: harassment-evgm
+    name: ハラスメント防止規程（EVGM版）
+    layer: EVGM
+    status: 要確認
+    effective_date: "2023-01-01"
+    owner_dept: 管理部総務人事課
+    files:
+      - name: "ハラスメント防止規程（2023.1.1）.doc"
+        root: REG_ROOT
+        last_modified: "2026-07-24"
+    question: |
+      HD版（harassment-hd, 20260401制定）と併存している。
+      層が異なるため併存が正しい可能性があるが、EVGM版が HD版に吸収されて廃止済みかもしれない。
+      総務人事課での確認が必要。
+
+  # ───────── HDグループ規程 ─────────
+
+  - id: harassment-hd
+    name: ハラスメント防止規程（HD版）
+    layer: HD
+    status: 要確認
+    effective_date: "2026-04-01"
+    files:
+      - name: "ハラスメント防止規程　20260401制定.pdf"
+        root: REG_ROOT
+        last_modified: "2026-05-18"
+    note: "名宛人は「株式会社D&Dホールディングス及びD&Dグループ各社」。適用範囲は包括型。"
+    question: "EVGM版（harassment-evgm）との関係が未確認。"
+
+  - id: compliance-kanri
+    name: コンプライアンス管理規程
+    layer: HD
+    status: 要確認
+    effective_date: null
+    candidates:
+      - name: "コンプライアンス管理規程（2025.8.1）.pdf"
+        root: REG_ROOT
+        effective_date: "2025-08-01"
+        last_modified: "2026-07-24"
+      - name: "コンプライアンス管理規程　20260401改訂.pdf"
+        root: REG_ROOT
+        effective_date: "2026-04-01"
+        last_modified: "2026-05-17"
+    question: |
+      同一フォルダに2版が併存。20260401改訂版が現行と推定されるが、
+      本文の附則で旧版の廃止が確認できていない。第1条の文言も微妙に異なる
+      （「当社子会社及び当社関連会社」vs「当社子会社並びに当社関連会社」）。
+
+  - id: naibu-tsuho
+    name: 内部通報規程
+    layer: HD
+    status: current
+    effective_date: "2026-04-01"
+    files:
+      - name: "内部通報規程　20260401制定.pdf"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2026-05-17"
+    legal_basis: ["公益通報者保護法"]
+    note: "責任者は D&Dホールディングス代表取締役社長"
+
+  - id: hansha
+    name: 反社会的勢力対応規程
+    layer: HD
+    status: current
+    effective_date: "2026-04-01"
+    files:
+      - name: "反社会的勢力対応規程　20260401制定.pdf"
+        root: REG_ROOT
+        last_modified: "2026-05-17"
+    legal_basis: ["暴力団員による不当な行為の防止等に関する法律"]
+
+  # ───────── ガバナンス・決裁系 ─────────
+
+  - id: torishimariyakukai
+    name: 取締役会規程
+    layer: EVGM
+    status: current
+    effective_date: "2025-06-01"
+    files:
+      - name: "取締役会規程（2025.6.1）.docx"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2025-05-29"
+    legal_basis: ["会社法"]
+    note: "09-procedure が付議事項の判定に使用。本文中に「規定」表記のゆれあり。"
+
+  - id: ringi
+    name: 稟議規程
+    layer: EVGM
+    status: current
+    effective_date: "2024-02-01"
+    files:
+      - name: "稟議規程（2024.2.1）.doc"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2024-05-03"
+    note: "09-procedure が決裁ルート判定に使用。"
+
+  - id: yakuin
+    name: 役員規程
+    layer: EVGM
+    status: current
+    effective_date: "2022-06-07"
+    files:
+      - name: "役員規程（2022.6.7） .docx"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2024-05-03"
+    note: "取締役は6名以内。イデックスオート・ジャパンから2名。ファイル名末尾に余分な空白あり。"
+
+  # ───────── 経理・債権系 ─────────
+
+  - id: keiri
+    name: 経理規程
+    layer: EVGM
+    status: current
+    effective_date: "2026-05-08"
+    revision_note: "20260508改訂"
+    files:
+      - name: "経理規程(20260508改訂).pdf"
+        root: REG_ROOT
+        last_modified: "2026-05-11"
+
+  - id: urikake
+    name: 売掛規程
+    layer: EVGM
+    status: current
+    effective_date: "2024-07-01"
+    files:
+      - name: "売掛規程（2024.7.1 ）.docx"
+        root: REG_ROOT_PERSONAL
+        last_modified: "2024-10-22"
+    note: "車両販売以外の一般サービス取引が対象。ファイル名に余分な空白あり。"
+
+  # ───────── 車両・運行系 ─────────
+
+  - id: seibi-kanri
+    name: 整備管理規程
+    layer: EVGM
+    status: 要確認
+    effective_date: "2026-06-01"
+    legal_basis: ["道路運送車両法施行規則第32条第2項"]
+    candidates:
+      - name: "整備管理規程（20260601）.pdf"
+        root: REG_ROOT
+        effective_date: "2026-06-01"
+        last_modified: "2026-06-11"
+      - name: "整備管理規程（TRC）.pdf"
+        root: REG_ROOT_PERSONAL
+        effective_date: null
+        last_modified: "2019-05-05"
+    question: |
+      20260601版が現行と推定。TRC版は別事業所・別法人向けの可能性があり、
+      廃止済みか併存かが不明。「TRC」が何を指すかの確認が必要。
+      なお 20260601版はPDFのタイトルが「整備管理規定」と誤記されている。
+
+# ───────── 規程以外の参照文書 ─────────
+
+reference_documents:
+  - name: "●個別決裁基準表（2024.2.1）.xlsx"
+    roots: [REG_ROOT, REG_ROOT_PERSONAL]
+    used_by: [09-procedure]
+    note: "決裁者／決議機関／承認者／起案者／金額基準／株主間承認の別。決裁ルート判定の一次資料。"
+
+  - name: "EVGM 業務分掌表（2026.4.1 案）.xlsx"
+    roots: [REG_ROOT, REG_ROOT_PERSONAL]
+    used_by: [02-consistency, 09-procedure]
+    note: "主管部署の判定に使用。ファイル名に「案」とあり、確定版かどうか要確認。"
+
+  - name: "基本契約書_新旧対照表・リーガルチェック_20260706.docx"
+    root: "LEGAL_ROOT/20260625_ケイジェイカンパニー基本契約書/"
+    used_by: [10-diff-impact]
+    note: "新旧対照表＋リーガルチェックを1文書にまとめる自社書式の見本。"
+
+# ───────── 検出済みの不整合 ─────────
+
+issues:
+  version_ambiguity:
+    - compliance-kanri     # 2版併存、廃止条項未確認
+    - seibi-kanri          # 20260601版 と TRC版
+    - harassment-evgm      # HD版との層をまたぐ併存
+    - shugyo-kisoku        # 原本ファイルの所在が未特定
+
+  duplicate_placement:
+    - regulation: chingin
+      locations: ["REG_ROOT_PERSONAL/【閲覧用】規程・就業規則/", "HR_ROOT/人事制度/"]
+    - note: |
+        REG_ROOT（share@）と REG_ROOT_PERSONAL（takizawa-d@）に同名ファイルが多数存在する。
+        個人領域が正本のコピーなのか、独自に更新されているのかの確認が必要。
+
+  naming_inconsistency:
+    patterns_found:
+      - "（2024.9.1）"        # 全角括弧＋ドット区切り
+      - "_20260401施行"       # アンダースコア＋施行
+      - "　20260401制定"      # 全角スペース＋制定
+      - "(20260401改定)"      # 半角括弧＋改定
+      - "(20260508改訂)"      # 改定/改訂の混在
+      - "（20260601）"        # 日付のみ
+    trailing_space:
+      - "役員規程（2022.6.7） .docx"
+      - "売掛規程（2024.7.1 ）.docx"
+    recommendation: "新規作成分は <規程名>_<施行日YYYYMMDD><制定|改定>.docx に統一する（CLAUDE.md 第7節）"
+
+  orphan_files:
+    - name: "~$規程（2022.6.7） .docx"
+      root: REG_ROOT
+      note: "Word ロックファイルの残留。削除候補（削除は人間が判断）。"
+
+  terminology:
+    - note: |
+        「規程」と「規定」の表記ゆれが文書名・本文の双方にある。
+        例：整備管理規程のPDFタイトルが「整備管理規定」、取締役会規程の本文が「この規定は」。
+        人事評価規定は固有名詞として「規定」で定着。
+
+  missing_regulations:
+    note: "他社で一般的にあるが EVGM に見当たらない規程。制定の要否は要検討。"
+    candidates:
+      - 規程管理規程（規程の制定・改廃手続きそのものを定める規程）
+      - 文書管理規程
+      - 情報セキュリティ規程 / 個人情報保護規程
+      - 印章管理規程
+      - 与信管理規程

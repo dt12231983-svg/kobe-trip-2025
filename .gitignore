@@ -1,0 +1,10 @@
+# Word/Excel ロックファイル
+~$*
+.~lock.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ローカル設定（権限の個人上書き）
+.claude/settings.local.json
